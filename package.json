@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"graphql-faker ./ext-swapi.graphql --extend http://swapi.apis.guru\"",
     "build": "next build",
     "start": "concurrently \"next start\" \"graphql-faker ./ext-swapi.graphql --extend http://swapi.apis.guru\"",
     "lint": "next lint"
   },
   "dependencies": {
     "concurrently": "^6.2.0",
+    "graphql": "^15.5.1",
     "next": "11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
